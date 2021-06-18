@@ -1,4 +1,4 @@
-FROM ruby:2.6.6
+FROM ruby:3.0.1
 
 LABEL "name"="Publish to Rubygems"
 LABEL "version"="1.0.0"
@@ -11,6 +11,8 @@ LABEL "com.github.actions.description"="Build and publish your gem to Rubygems"
 ENV LC_ALL C.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
+
+RUN gem install bundler
 
 ADD entrypoint.sh /entrypoint.sh
 
